@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="Tecka.Views.CertificateQrPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cv="using:Tecka.Views.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:Windows10version1809="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 7)"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <cv:QrCodeConverter x:Key="QrCodeConverter" />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Fill="LimeGreen" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <Button Style="{StaticResource TextBlockButtonStyle}" VerticalAlignment="Center" Foreground="White" Click="BackButton_Click">
+            <Button.Content>
+                <SymbolIcon Symbol="Cancel" />
+            </Button.Content>
+        </Button>
+
+        <TextBlock FontSize="20" Margin="20, 0, 0, 0" Text="Platný / Valid" Foreground="White" Grid.Column="1" VerticalAlignment="Center" />
+
+        <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource TextBlockButtonStyle}" Foreground="White" Click="DeleteCertificateButton_Click">
+            <Button.Content>
+                <SymbolIcon Symbol="Delete" />
+            </Button.Content>
+        </Button>
+        
+        <HyperlinkButton Grid.Row="0" Grid.Column="3" Margin="10, 0, 10, 0" NavigateUri="{StaticResource MzcrUri}" Foreground="White">
+            <HyperlinkButton.Content>
+                <Grid>
+                    <FontIcon Glyph="&#xEA3A;" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="24" Foreground="White" />
+                    <FontIcon Glyph="&#xE11B;" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="14" Foreground="White" />
+                </Grid>
+            </HyperlinkButton.Content>
+        </HyperlinkButton>
+
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" SizeChanged="ScrollViewer_SizeChanged">
+            <StackPanel Orientation="Vertical">
+                <Image x:Name="qrCode" Source="{x:Bind ViewModel.QrData, Mode=OneWay, Converter={StaticResource QrCodeConverter}}" VerticalAlignment="Top" MaxWidth="640" Stretch="Uniform" Margin="20, 0, 20, 0" />
+
+                <TextBlock Text="{x:Bind ViewModel.Name, Mode=OneWay}" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="WrapWholeWords" />
+                <TextBlock Text="{x:Bind ViewModel.BirthdayAsString, Mode=TwoWay}" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Center" />
+
+                <Grid HorizontalAlignment="Center">
+                    <Image Source="ms-appx:///Assets/eu_flag.png" Stretch="Uniform" Height="70" Margin="8"  />
+                    <TextBlock Text="CZ" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button
+            Windows10version1809:CornerRadius="5"
+            Content="PODROBNOSTI" 
+            Click="DetailsButton_Click"
+            BorderThickness="2"
+            BorderBrush="{ThemeResource SystemAccentColor}"
+            Background="{ThemeResource SystemBackgroundColor}"
+            Foreground="{ThemeResource SystemAccentColor}"
+            Grid.Row="4" 
+            Grid.ColumnSpan="4"
+            Margin="20, 0, 20, 20" 
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom" />
+    </Grid>
+</Page>

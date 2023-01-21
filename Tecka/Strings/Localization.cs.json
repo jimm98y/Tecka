@@ -1,0 +1,19 @@
+﻿{
+  "DetailCertificateCertificateIssuer": "Vydavatel certifikátu",
+  "DetailCertificateDoseNumber": "Číslo dávky",
+  "DetailCertificateManufacturer": "Výrobce nebo držitel rozhodnutí o registraci vakcíny",
+  "DetailCertificateMemberState": "Členský stát EU",
+  "DetailCertificateSampleCollectionDate": "Datum a čas odběru vzorku",
+  "DetailCertificateTestFacility": "Testovací středisko nebo zařízení",
+  "DetailCertificateTestResult": "Výsledek testu",
+  "DetailCertificateTestType": "Typ testu",
+  "DetailCertificateTotalDoses": "Celkový počet dávek",
+  "DetailCertificateUniqueCertificateIdentifier": "Unikátní identifikátor certifikátu",
+  "DetailCertificateVaccinationDate": "Datum očkování",
+  "DetailCertificateVaccine": "Vakcína",
+  "DetailCertificateVaccineProphylaxis": "Vakcina/profylaxe",
+  "DetailCertificateValidSince": "Platnost certifikatu od",
+  "DetailCertificateValidUntil": "Platnost certifikatu do",
+  "TypeTest": "Test",
+  "TypeVaccination": "Očkování"
+}

@@ -1,0 +1,19 @@
+﻿{
+  "DetailCertificateCertificateIssuer": "Certificate issuer",
+  "DetailCertificateDoseNumber": "Dose number",
+  "DetailCertificateManufacturer": "Manufacturer or registration holder",
+  "DetailCertificateMemberState": "EU member state",
+  "DetailCertificateSampleCollectionDate": "Sample collection date",
+  "DetailCertificateTestFacility": "Test facility",
+  "DetailCertificateTestResult": "Test result",
+  "DetailCertificateTestType": "Test type",
+  "DetailCertificateTotalDoses": "Total doses",
+  "DetailCertificateUniqueCertificateIdentifier": "Unique certificate identifier",
+  "DetailCertificateVaccinationDate": "Vaccination date",
+  "DetailCertificateVaccine": "Vaccine",
+  "DetailCertificateVaccineProphylaxis": "Vaccine/Profylaxis",
+  "DetailCertificateValidSince": "Valid since",
+  "DetailCertificateValidUntil": "Valid until",
+  "TypeTest": "Test",
+  "TypeVaccination": "Vaccination"
+}
